@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .game-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .game-board {
+            position: relative;
+        }
+        
+        .next-piece {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .next-piece div {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        canvas {
+            border: 2px solid white;
+            background-color: #111;
+        }
+        
+        .info-panel {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .score {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-board">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+        </div>
+        <div class="info-panel">
+            <div class="next-piece">
+                <div>次のブロック</div>
+                <canvas id="nextPieceCanvas" width="100" height="100"></canvas>
+            </div>
+            <div class="score">スコア: <span id="score">0</span></div>
+            <div class="lines">消したライン: <span id="lines">0</span></div>
+            <div class="controls">
+                <h3>操作方法</h3>
+                <p>← → : 左右移動</p>
+                <p>↓ : 高速落下</p>
+                <p>↑ : 回転</p>
+                <p>スペース : ハードドロップ</p>
+            </div>
+        </div>
+    </div>
+    <script src="new_tetris.js"></script>
+</body>
+</html>
